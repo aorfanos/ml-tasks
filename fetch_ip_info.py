@@ -43,13 +43,9 @@ def fetch_ip_info(ip=""):
         ))
 
     db_connect.commit()
-
-    for _row in db_cursor.execute("select * from ip_info"):
-        print(_row)
-    
     db_connect.close()
 
 if __name__ == '__main__':
     while True:
         fire.Fire(fetch_ip_info)
-        time.sleep(60)
+        time.sleep(5)
