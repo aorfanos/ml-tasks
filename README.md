@@ -47,6 +47,8 @@ ulimit.test                : ok=6    changed=2    unreachable=0    failed=0
 ```
 
 ### task 3
+- [Demo](https://asciinema.org/a/Km7gxpWi7ZaACgmu6ij7sEath)
+- Output:
 ```
 (u'1588796622', u'85.75.14.126', u'Athens', u'I', u'Attica', u'Europe/Athens', 23.7353, 37.9842, 0.0, u'GR', u'Greece', u'')
 ```
@@ -58,5 +60,3 @@ ulimit.test                : ok=6    changed=2    unreachable=0    failed=0
 REPOSITORY                       TAG                 IMAGE ID            CREATED             SIZE
 aorfanos/fetch_ip_info           latest              1e7830c9eb14        11 seconds ago      60.6 MB
 ```
-
-- 
