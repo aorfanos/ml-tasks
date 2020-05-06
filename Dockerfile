@@ -7,8 +7,6 @@ WORKDIR /opt/fetch_ip_info
 
 RUN \
 apk add --update \
-python3 \
-python3-dev \
 py-pip \
 && pip install --upgrade pip \
 && pip install requests && pip install fire
