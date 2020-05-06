@@ -52,4 +52,4 @@ def fetch_ip_info(ip=""):
 if __name__ == '__main__':
     while True:
         fire.Fire(fetch_ip_info)
-        time.sleep(3600)
+        time.sleep(60)
