@@ -1,0 +1,25 @@
+---
+- hosts: "{{ hosts }}" 
+  gather_facts: yes
+  tasks:
+        - shell: |
+                  cat /proc/sys/fs/file-max 
+          register: ulimit_init
+
+        - name: Display initial ulimit -n value
+          debug:
+                  msg: "Current ulimit -n is :{{ ulimit_init.stdout }}"
+        # I decided to change it that way instead of the pam_limits module
+        # because the latter doesn't seem to hold the value for the '*' domain
+        # in Vagrant. 
+        - name: Update ulimit
+          sysctl:
+                  name: "fs.file-max"
+                  value: 128000
+                  state: present
+        - shell: |
+                cat /proc/sys/fs/file-max 
+          register: ulimit
+        - name: Display changed value
+          debug:
+                  msg: "Ulimit for open files (-n) option is: {{ ulimit.stdout }}"
